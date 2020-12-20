@@ -15,7 +15,7 @@ The main steps of the project are:
 
 To execute the first 3 steps, execute **IR-TREC-COVD.sh**.
 
-Then, follow the [instructions](<(https://github.com/usnistgov/trec_eval)>) fir installing _trec_eval_.
+Then, follow the [instructions](https://github.com/usnistgov/trec_eval) for installing _trec_eval_.
 To evalaute the results, please execute the following steps:
 
 1. Make three folders in the root folder of _trec_eval_ called "inputF1", "inputF2", "inputF3"

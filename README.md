@@ -23,4 +23,4 @@ To evalaute the results, please execute the following steps:
 3. Make three folders in the root folder of _trec_eval_ called "outputF1", "outputF2", "ouputF3"
 4. Run **executeTREC.sh**
 5. The output results are placed in the output Folders
-6. Run **src/plots.py** in the root folder of _trec_eval_ to generate plots
+6. Run **python3 plots.py** in the root folder of _trec_eval_ to generate plots

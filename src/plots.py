@@ -6,15 +6,21 @@ import re
 
 def makeparam(stringpaths):
     paramgrid = []
-    for path in stringpaths:
+    if(len(stringpaths) == 64):
+      for path in stringpaths:
+          weight1 = float(path[0]+"."+path[1])
+          weight2 = float(path[2]+"."+path[3])
+          weight3 = float(path[4]+"."+path[5])
+          weight4 = float(path[6]+"."+path[7])
+          weight5 = float(path[8]+"."+path[9])
+          weight6 = float(path[10]+"."+path[11])
+          paramgrid.append([weight1,weight2,weight3,weight4,weight5,weight6])
+    else:
+      for path in stringpaths:
         weight1 = float(path[0]+"."+path[1])
         weight2 = float(path[2]+"."+path[3])
         weight3 = float(path[4]+"."+path[5])
-        weight4 = float(path[6]+"."+path[7])
-        weight5 = float(path[8]+"."+path[9])
-        weight6 = float(path[10]+"."+path[11])
-        paramgrid.append([weight1,weight2,weight3,weight4,weight5,weight6])
-
+        paramgrid.append([weight1,weight2,weight3])
     return np.array(paramgrid)
 
 def get_allfilepaths(directory):
@@ -63,6 +69,8 @@ def make_plot(field, title, xlabel):
               values = re.split('\t',row)
               if(re.search("P_15", values[0])):
                   ps.append(values[2])
+
+  print(stringpaths)
   stringpaths = makeparam(stringpaths)
 
 
@@ -72,7 +80,8 @@ def make_plot(field, title, xlabel):
   y_pos = np.arange(len(data))
   ps2 = [float(i) for i in ps]
 
-
+  print(y_pos)
+  print(ps2)
   plt.bar(y_pos, ps2, align='center', alpha=0.5)
   plt.xticks(y_pos, data, rotation="vertical")
   print(max(ps2))
